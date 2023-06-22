@@ -3,8 +3,10 @@
 import os
 import sys
 from django.core.management.commands.runserver import Command as runserver
+import environ
 
-runserver.default_port=os.environ.PORT
+env = environ.Env()
+runserver.default_port=env.int('PORT')
 
 def main():
     """Run administrative tasks."""
