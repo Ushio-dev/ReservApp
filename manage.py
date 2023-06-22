@@ -20,6 +20,4 @@ def main():
 
 
 if __name__ == '__main__':
-    env = environ.Env()
-    runserver.default_port = env.int('PORT')
     main()
