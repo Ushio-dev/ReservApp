@@ -5,9 +5,6 @@ import sys
 from django.core.management.commands.runserver import Command as runserver
 import environ
 
-env = environ.Env()
-runserver.default_port=env.int('PORT')
-
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ReservApp.settings')
@@ -23,4 +20,6 @@ def main():
 
 
 if __name__ == '__main__':
+    env = environ.Env()
+    runserver.default_port = env.int('PORT')
     main()
