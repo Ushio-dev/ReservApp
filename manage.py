@@ -8,6 +8,7 @@ import environ
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ReservApp.settings')
+    runserver.default_port = os.environ['PORT']
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
